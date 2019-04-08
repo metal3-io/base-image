@@ -1,0 +1,8 @@
+language: go
+
+sudo: false
+
+services:
+  - docker
+
+script: docker build . -f Dockerfile
