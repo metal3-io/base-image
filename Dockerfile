@@ -39,6 +39,8 @@ RUN yum install -y golang && \
     ln -s /usr/bin/goimports $GOPATH/bin/goimports
     # TODO: symlink for backwards compatibility with hack/build-images.sh only, remove
 
+RUN yum update -y && yum clean all
+
 RUN chmod g+xw -R $GOPATH && \
     chmod g+xw -R $(go env GOROOT)
 
