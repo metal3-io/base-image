@@ -1,7 +1,7 @@
 #
-# This is the image that controls the standard build environment for releasing MetalKube components.
+# This is the image that controls the standard build environment for releasing Metal3 components.
 #
-# The standard name for this image is metalkube/metalkube-base-image
+# The standard name for this image is metal3-io/base-image
 #
 FROM        centos:7
 
@@ -20,8 +20,8 @@ RUN yum install -y epel-release && \
     rpm -V $INSTALL_PKGS && \
     yum clean all && \
     touch /os-build-image && \
-    git config --system user.name metalkube && \
-    git config --system user.email metalkube-dev@groups.google.com
+    git config --system user.name metal3 && \
+    git config --system user.email metal3-dev@groups.google.com
 
 RUN yum install -y golang && \
     yum clean all && \
@@ -42,5 +42,5 @@ RUN yum install -y golang && \
 RUN chmod g+xw -R $GOPATH && \
     chmod g+xw -R $(go env GOROOT)
 
-LABEL io.k8s.display-name="MetalKube Base Image" \
-      io.k8s.description="This is the base image for the MetalKube components."
+LABEL io.k8s.display-name="Metal3 Base Image" \
+      io.k8s.description="This is the base image for the Metal3 components."

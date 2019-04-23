@@ -1,2 +1,3 @@
-# metalkube-base-image
-Definition of base docker image for metalkube tools
+# metal3 base-image
+
+Definition of base docker image for Metal3 tools
